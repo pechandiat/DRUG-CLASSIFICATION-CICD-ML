@@ -1,0 +1,8 @@
+pytest
+pylint
+black
+pandas
+scikit-learn
+matplotlib
+skops
+ipython
