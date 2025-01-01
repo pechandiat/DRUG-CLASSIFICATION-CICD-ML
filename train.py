@@ -37,6 +37,8 @@ pipe = Pipeline(
 )
 pipe.fit(X_train, y_train)
 
+
+#Evaluating the model
 from sklearn.metrics import accuracy_score, f1_score
 
 predictions = pipe.predict(X_test)
@@ -48,6 +50,7 @@ print("Accuracy:", str(round(accuracy, 2)*100)+"%","F1", round(f1,2))
 with open("Results/metrics.txt",'w') as outfile:
     outfile.write (f"\nAccuracy = {str(round(accuracy, 2)*100)}, F1 Score = {round(f1,2)}")
 
+#Ploting confusion matrix
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
@@ -56,6 +59,7 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=pipe.classes_)
 disp.plot()
 plt.savefig("Results/model_results.png", dpi=120)
 
+#Generating skops file for the app
 import skops.io as sio
 
 sio.dump(pipe, "Model/drug_pipeline.skops")
