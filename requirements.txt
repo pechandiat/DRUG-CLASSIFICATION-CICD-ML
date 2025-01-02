@@ -7,3 +7,4 @@ matplotlib
 skops
 ipython
 gradio
+huggingface_hub
