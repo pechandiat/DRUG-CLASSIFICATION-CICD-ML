@@ -1,5 +1,3 @@
-pip install skops
-
 import gradio as gr
 import skops.io as sio
 
